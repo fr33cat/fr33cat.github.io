@@ -1,0 +1,4 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "fr33cat"
+theme = "hugo-book"
