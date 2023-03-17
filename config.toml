@@ -2,3 +2,9 @@ baseURL = "https://fr33cat.github.io"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "hugo-book"
+[imaging]
+  anchor = 'Smart'
+  bgColor = '#ffffff'
+  hint = 'photo'
+  quality = 75
+  resampleFilter = 'Box'
