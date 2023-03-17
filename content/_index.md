@@ -1,10 +1,10 @@
 ---
-title: Introduction
+title: My first article
 type: docs
 ---
 
 # Acerbo datus maxime
-
+# Bianca sei figa
 {{< columns >}}
 ## Astris ipse furtiva
 
