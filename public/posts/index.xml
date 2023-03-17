@@ -51,5 +51,16 @@ Step 2. Build the Docs #  Hugo has its own example site which happens to also be
 Follow the following steps:</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/posts/data_act/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/posts/data_act/</guid>
+      <description>Data act: bosting innovation by removing barriers obstructing consumers and businesses&#39; access to data.
+Key elements of the data act:
+ Development of new services Facilitate the development of new services in the sector of artificial intelligence, where huge amounts of data are needed for algorithm training. ==Lower the prices for after-sales services and repairs of connected devices== Grant access to data by public institutions in case of emergency Facilitate switching from one cloud provider to another Prevent unlawful international data transfers by cloud providers  Example: a car manufacturer is collecting many data from the usage of the car, this data is often used by the manufacturer.</description>
+    </item>
+    
   </channel>
 </rss>
