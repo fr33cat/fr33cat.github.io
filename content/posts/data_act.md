@@ -2,7 +2,7 @@
 
 Data act: bosting innovation by removing barriers obstructing consumers and businesses' access to data.
 
-![_data act_](./media/_data%20act_.jpg)!](./media/_data%20act_.jpg)
+![_data act_](/posts/media/_data%20act_.jpg)!](/posts/media/_data%20act_.jpg)
 
 Key elements of the data act:
 
