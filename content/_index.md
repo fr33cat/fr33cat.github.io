@@ -4,7 +4,7 @@ type: docs
 ---
 
 # Acerbo datus maxime
-# Bianca sei figa
+
 {{< columns >}}
 ## Astris ipse furtiva
 
