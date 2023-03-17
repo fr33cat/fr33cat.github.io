@@ -2,7 +2,7 @@
 
 Data act: bosting innovation by removing barriers obstructing consumers and businesses' access to data.
 
-![_data act_](/posts/media/_data%20act_.jpg)!](/posts/media/_data%20act_.jpg)
+![_data act_](/posts/media/_data%20act_.jpg)
 
 Key elements of the data act:
 
@@ -24,22 +24,4 @@ Sharing data with governments will be done by respecting all democratic rights, 
 
 
 More information: [Data Act | Shaping Europe’s digital future (europa.eu)](https://digital-strategy.ec.europa.eu/en/policies/data-act)
-
-
-
-
-
-# Test 2
-
-Blabla
-
-### Test 2.1
-
-
-
-
-
-### Test 2.2
-
-
 
