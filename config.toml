@@ -6,5 +6,5 @@ theme = "hugo-book"
   anchor = 'Smart'
   bgColor = '#ffffff'
   hint = 'photo'
-  quality = 75
+  quality = 15
   resampleFilter = 'Box'
