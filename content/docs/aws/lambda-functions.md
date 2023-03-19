@@ -1,7 +1,8 @@
 ---
+weight: 2
 title: "Lambda Functions"
 date: 2023-03-19T21:08:06Z
-draft: true
+draft: false
 ---
 # How to Exploit AWS Lambda Functions for Serverless Penetration Testing
 

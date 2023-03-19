@@ -3,6 +3,7 @@ headless: true
 ---
 
 - [**AWS**]({{< relref "/docs/aws" >}})
+  - [**Lambda Functions**]({{< relref "/docs/aws/lambda-functions" >}})
 <br />
 
 - **Shortcodes**

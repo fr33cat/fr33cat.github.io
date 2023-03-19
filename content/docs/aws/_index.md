@@ -1,7 +1,7 @@
 ---
 weight: 1
 title: "AWS"
-bookFlatSection: true
+bookCollapseSection: true
 ---
 
 # Pentesting AWS Environments: A Beginner's Guide

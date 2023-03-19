@@ -1,3 +1,6 @@
+---
+draft: true
+---
 Data act: bosting innovation by removing barriers obstructing consumers and businesses' access to data.
 
 ![_data act_](/posts/media/_data%20act_.jpg)
