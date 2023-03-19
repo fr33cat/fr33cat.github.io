@@ -1,54 +1,34 @@
-# How to Exploit AWS Lambda Functions for Serverless Penetration Testing
+# How to Pentest AWS Lambda Functions
 
-Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.
+AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
 
-However, serverless computing also introduces new security challenges and attack vectors. In this blog post, we will explore how to exploit AWS Lambda functions for serverless penetration testing. We will demonstrate how to:
+Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated. However, there are some techniques that can help you discover and exploit vulnerabilities in Lambda functions and their configurations.
 
-- Identify vulnerable Lambda functions
-- Bypass common security controls
-- Execute arbitrary commands and code
-- Exfiltrate data and credentials
-- Pivot to other AWS resources
+## Discovering Lambda Functions
 
-## Identifying Vulnerable Lambda Functions
+One of the first steps in pentesting AWS Lambda functions is to find out which functions exist and how they are invoked. There are several ways to do this:
 
-The first step of serverless penetration testing is to identify potential targets. There are several ways to discover Lambda functions, such as:
+- Use the AWS CLI or SDK to list all the functions in a region: `aws lambda list-functions --region <region>`
+- Use the AWS Management Console to browse through the functions and their triggers
+- Use tools like [Lambhack](https://github.com/Coalfire-Research/Lambhack) or [Pacu](https://github.com/RhinoSecurityLabs/pacu) to enumerate Lambda functions and their metadata
+- Use passive reconnaissance techniques such as DNS enumeration, subdomain scanning, web crawling, etc. to find endpoints that invoke Lambda functions
+- Use active reconnaissance techniques such as port scanning, banner grabbing, fuzzing, etc. to identify Lambda function endpoints and their parameters
 
-- Enumerating API Gateway endpoints that invoke Lambda functions
-- Scanning S3 buckets that store Lambda function code
-- Analyzing CloudFormation templates that deploy Lambda functions
-- Leveraging IAM permissions that allow invoking or listing Lambda functions
+## Exploiting Lambda Functions
 
-Once we have a list of Lambda function names or ARNs (Amazon Resource Names), we can use the `aws lambda get-function` command to retrieve more information about each function, such as its runtime environment, handler name, role ARN, environment variables, and code location.
+Once you have discovered some Lambda functions and their triggers, you can try to exploit them by sending malicious inputs or requests. Some of the common attack vectors are:
 
-## Bypassing Common Security Controls
+- Injection attacks: If the Lambda function accepts user input or parameters from an event source (such as API Gateway), you can try to inject malicious code or commands that will execute on the underlying container or environment. For example, you can use [Server-Side Template Injection (SSTI)](https://portswigger.net/research/server-side-template-injection) techniques to execute arbitrary code on a function that uses a templating engine (such as Jinja2) for rendering HTML responses.
+- Privilege escalation attacks: If the Lambda function has an IAM role attached to it that grants access to other AWS resources or services (such as S3 buckets, DynamoDB tables, EC2 instances, etc.), you can try to abuse those permissions by performing unauthorized actions on those resources or services. For example, you can use [Server-Side Request Forgery (SSRF)](https://portswigger.net/web-security/ssrf) techniques to make requests from the function's container to internal AWS endpoints (such as metadata service) that will return sensitive information (such as IAM credentials) that you can use for further exploitation.
+- Denial-of-service attacks: If the Lambda function has a limited concurrency limit or timeout value set for it (which is common for cost optimization purposes), you can try to exhaust those limits by sending multiple concurrent requests or long-running requests that will prevent other legitimate requests from being processed. For example, you can use [Slowloris](https://github.com/gkbrk/slowloris) tool to send partial HTTP requests that will keep connections open with the function's endpoint until it reaches its concurrency limit.
 
-The next step is to bypass any security controls that may prevent us from exploiting the Lambda functions. Some of the common security controls are:
+## Mitigating Risks
 
-- Input validation and sanitization
-- Output encoding and escaping
-- Function policies and resource policies
-- VPC isolation and firewalls
+To prevent or reduce the impact of pentesting attacks on AWS Lambda functions, there are some best practices that should be followed by developers and administrators:
 
-To bypass input validation and sanitization, we can try different injection techniques such as SQL injection, command injection, XSS injection, etc., depending on the type of input parameter and the handler logic. For example, if the input parameter is passed as an argument to a shell command executed by the handler function, we can try injecting shell metacharacters or subcommands.
-
-To bypass output encoding and escaping, we can try different encoding schemes such as URL encoding, base64 encoding,
-hexadecimal encoding etc., depending on how the output is processed by the handler function or other services. For example,
-if the output is returned as an HTTP response by API Gateway,
-we can try injecting HTML tags or JavaScript code.
-
-To bypass function policies and resource policies,
-we can try exploiting misconfigurations or weak permissions that allow us to invoke or modify the Lambda functions.
-For example,
-if the function policy allows anyone to invoke the function,
-we can use `aws lambda invoke` command with any payload we want.
-If the resource policy allows anyone to update the function configuration or code,
-we can use `aws lambda update-function-code` command with our malicious code.
-
-To bypass VPC isolation and firewalls,
-we can try exploiting network vulnerabilities or misconfigurations that allow us access to internal resources.
-For example,
-if there are public IP addresses assigned to EC2 instances inside a private subnet,
-we can scan them for open ports using nmap.
-If there are SSH keys stored in S3 buckets accessible by our role,
-we can download them using `aws s3 cp` command and use them to connect to EC2 instances.
+- Use secure coding practices and frameworks when developing Lambda functions
+- Validate and sanitize user input and parameters before processing them
+- Implement proper error handling and logging mechanisms for debugging purposes
+- Restrict access to Lambda function endpoints using authentication and authorization mechanisms (such as API keys)
+- Apply least privilege principle when assigning IAM roles and policies to Lambda functions
+- Monitor and audit Lambda function activity using CloudWatch Logs and CloudTrail
