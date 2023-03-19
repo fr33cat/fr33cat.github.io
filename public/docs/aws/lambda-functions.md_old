@@ -1,3 +1,10 @@
+---
+weight: 2
+title: "AWS"
+bookFlatSection: true
+type: "page"
+
+---
 # How to Exploit AWS Lambda Functions for Serverless Penetration Testing
 
 Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.
