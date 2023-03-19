@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to Exploit AWS Lambda Functions for Serverless Penetration Testing #  Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.
+However, serverless computing also introduces new security challenges and attack vectors. In this blog post, we will explore how to exploit AWS Lambda functions for serverless penetration testing.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="How to Exploit AWS Lambda Functions for Serverless Penetration Testing #  Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.
+However, serverless computing also introduces new security challenges and attack vectors. In this blog post, we will explore how to exploit AWS Lambda functions for serverless penetration testing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/aws/buttons/" />
+
+<title>Buttons | fr33cat.github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e85d31ff380401b942f71d03dd220d89ed6257371ef961c9e04b4aca89fd835b.js" integrity="sha256-6F0x/zgEAblC9x0D3SINie1iVzce&#43;WHJ4EtKyon9g1s=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>fr33cat.github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle" checked />
+    <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
+      <a href="/docs/aws/" class="">AWS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/buttons/" class="active">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/lambda-functions/" class="">Lambda Functions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle"  />
+    <label for="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="flex justify-between">
+      <a href="/docs/azure/" class="">AZURE</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Buttons</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-exploit-aws-lambda-functions-for-serverless-penetration-testing">How to Exploit AWS Lambda Functions for Serverless Penetration Testing</a>
+      <ul>
+        <li><a href="#identifying-vulnerable-lambda-functions">Identifying Vulnerable Lambda Functions</a></li>
+        <li><a href="#bypassing-common-security-controls">Bypassing Common Security Controls</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-exploit-aws-lambda-functions-for-serverless-penetration-testing">
+  How to Exploit AWS Lambda Functions for Serverless Penetration Testing
+  <a class="anchor" href="#how-to-exploit-aws-lambda-functions-for-serverless-penetration-testing">#</a>
+</h1>
+<p>Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.</p>
+<p>However, serverless computing also introduces new security challenges and attack vectors. In this blog post, we will explore how to exploit AWS Lambda functions for serverless penetration testing. We will demonstrate how to:</p>
+<ul>
+<li>Identify vulnerable Lambda functions</li>
+<li>Bypass common security controls</li>
+<li>Execute arbitrary commands and code</li>
+<li>Exfiltrate data and credentials</li>
+<li>Pivot to other AWS resources</li>
+</ul>
+<h2 id="identifying-vulnerable-lambda-functions">
+  Identifying Vulnerable Lambda Functions
+  <a class="anchor" href="#identifying-vulnerable-lambda-functions">#</a>
+</h2>
+<p>The first step of serverless penetration testing is to identify potential targets. There are several ways to discover Lambda functions, such as:</p>
+<ul>
+<li>Enumerating API Gateway endpoints that invoke Lambda functions</li>
+<li>Scanning S3 buckets that store Lambda function code</li>
+<li>Analyzing CloudFormation templates that deploy Lambda functions</li>
+<li>Leveraging IAM permissions that allow invoking or listing Lambda functions</li>
+</ul>
+<p>Once we have a list of Lambda function names or ARNs (Amazon Resource Names), we can use the <code>aws lambda get-function</code> command to retrieve more information about each function, such as its runtime environment, handler name, role ARN, environment variables, and code location.</p>
+<h2 id="bypassing-common-security-controls">
+  Bypassing Common Security Controls
+  <a class="anchor" href="#bypassing-common-security-controls">#</a>
+</h2>
+<p>The next step is to bypass any security controls that may prevent us from exploiting the Lambda functions. Some of the common security controls are:</p>
+<ul>
+<li>Input validation and sanitization</li>
+<li>Output encoding and escaping</li>
+<li>Function policies and resource policies</li>
+<li>VPC isolation and firewalls</li>
+</ul>
+<p>To bypass input validation and sanitization, we can try different injection techniques such as SQL injection, command injection, XSS injection, etc., depending on the type of input parameter and the handler logic. For example, if the input parameter is passed as an argument to a shell command executed by the handler function, we can try injecting shell metacharacters or subcommands.</p>
+<p>To bypass output encoding and escaping, we can try different encoding schemes such as URL encoding, base64 encoding,
+hexadecimal encoding etc., depending on how the output is processed by the handler function or other services. For example,
+if the output is returned as an HTTP response by API Gateway,
+we can try injecting HTML tags or JavaScript code.</p>
+<p>To bypass function policies and resource policies,
+we can try exploiting misconfigurations or weak permissions that allow us to invoke or modify the Lambda functions.
+For example,
+if the function policy allows anyone to invoke the function,
+we can use <code>aws lambda invoke</code> command with any payload we want.
+If the resource policy allows anyone to update the function configuration or code,
+we can use <code>aws lambda update-function-code</code> command with our malicious code.</p>
+<p>To bypass VPC isolation and firewalls,
+we can try exploiting network vulnerabilities or misconfigurations that allow us access to internal resources.
+For example,
+if there are public IP addresses assigned to EC2 instances inside a private subnet,
+we can scan them for open ports using nmap.
+If there are SSH keys stored in S3 buckets accessible by our role,
+we can download them using <code>aws s3 cp</code> command and use them to connect to EC2 instances.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-exploit-aws-lambda-functions-for-serverless-penetration-testing">How to Exploit AWS Lambda Functions for Serverless Penetration Testing</a>
+      <ul>
+        <li><a href="#identifying-vulnerable-lambda-functions">Identifying Vulnerable Lambda Functions</a></li>
+        <li><a href="#bypassing-common-security-controls">Bypassing Common Security Controls</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
