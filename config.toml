@@ -2,9 +2,15 @@ baseURL = "https://fr33cat.github.io"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "hugo-book"
-[imaging]
-  anchor = 'Smart'
-  bgColor = '#ffffff'
-  hint = 'photo'
-  quality = 15
-  resampleFilter = 'Box'
+enableGitInfo = false
+# Needed for mermaid/katex shortcodes
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+[params]
+  # (Optional, default light) Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  BookTheme = 'dark'
