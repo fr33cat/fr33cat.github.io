@@ -1,6 +1,6 @@
 baseURL = "https://fr33cat.github.io"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "fr33cat.github.io"
 theme = "hugo-book"
 enableGitInfo = false
 # Needed for mermaid/katex shortcodes

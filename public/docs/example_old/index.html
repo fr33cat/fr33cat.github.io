@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pentesting AWS Environments: A Beginner&rsquo;s Guide #  AWS (Amazon Web Services) is a cloud computing platform that offers a variety of services such as computing, storage, networking, database, analytics, security and more. AWS customers can use these services to build and run applications on the cloud, without having to worry about managing the underlying infrastructure.
+However, as with any IT system, AWS environments are not immune to security risks and vulnerabilities.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="AWS" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/example_old/" />
+
+<title>AWS | My New Hugo Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.c500b20321ff24c3d2fda95886d1dc2c25c5ddb2a333d9d6439c0bb223d25c76.js" integrity="sha256-xQCyAyH/JMPS/alYhtHcLCXF3bKjM9nWQ5wLsiPSXHY=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://fr33cat.github.io/docs/example_old/index.xml" title="My New Hugo Site" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example_old/" class="active">AWS</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example_old/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example_old/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example_old/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0fa6d2f21369aa6d0ee7f734e7cc9dd8" class="toggle"  />
+    <label for="section-0fa6d2f21369aa6d0ee7f734e7cc9dd8" class="flex justify-between">
+      <a role="button" class="">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example_old/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example_old/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/aws/" class="">AWSS</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3b2ce7d26b88e37e984fdc253215285e" class="toggle"  />
+    <label for="section-3b2ce7d26b88e37e984fdc253215285e" class="flex justify-between">
+      <a role="button" class="">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>AWS</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pentesting-aws-environments-a-beginners-guide">Pentesting AWS Environments: A Beginner&rsquo;s Guide</a>
+      <ul>
+        <li><a href="#benefits-and-challenges-of-pentesting-aws-environments">Benefits and Challenges of Pentesting AWS Environments</a></li>
+        <li><a href="#permitted-and-prohibited-activities-for-pentesting-aws-environments">Permitted and Prohibited Activities for Pentesting AWS Environments</a></li>
+        <li><a href="#tools-and-techniques-for-pentesting-aws-environments">Tools And Techniques For Pentesting Aws Environments</a>
+          <ul>
+            <li><a href="#nmap">Nmap</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="pentesting-aws-environments-a-beginners-guide">
+  Pentesting AWS Environments: A Beginner&rsquo;s Guide
+  <a class="anchor" href="#pentesting-aws-environments-a-beginners-guide">#</a>
+</h1>
+<p>AWS (Amazon Web Services) is a cloud computing platform that offers a variety of services such as computing, storage, networking, database, analytics, security and more. AWS customers can use these services to build and run applications on the cloud, without having to worry about managing the underlying infrastructure.</p>
+<p>However, as with any IT system, AWS environments are not immune to security risks and vulnerabilities. Penetration testing (or pentesting) is a method of evaluating the security posture of an AWS environment by simulating a malicious attack and trying to exploit any weaknesses or flaws.</p>
+<p>Pentesting can help AWS customers identify and mitigate security issues in their cloud infrastructure, as well as comply with regulatory requirements and industry standards. In this blog post, we will cover some of the basics of pentesting AWS environments, such as:</p>
+<ul>
+<li>What are the benefits and challenges of pentesting AWS environments?</li>
+<li>What are the permitted and prohibited activities for pentesting AWS environments?</li>
+<li>What are some of the tools and techniques for pentesting AWS environments?</li>
+</ul>
+<h2 id="benefits-and-challenges-of-pentesting-aws-environments">
+  Benefits and Challenges of Pentesting AWS Environments
+  <a class="anchor" href="#benefits-and-challenges-of-pentesting-aws-environments">#</a>
+</h2>
+<p>Pentesting AWS environments can provide several benefits for both AWS customers and service providers. Some of these benefits include:</p>
+<ul>
+<li>Improving the security awareness and resilience of the cloud infrastructure</li>
+<li>Detecting and preventing potential data breaches or cyberattacks</li>
+<li>Enhancing the trust and confidence of customers and stakeholders</li>
+<li>Demonstrating compliance with security best practices and regulations</li>
+</ul>
+<p>However, pentesting AWS environments also poses some challenges that need to be considered before conducting a pentest. Some of these challenges include:</p>
+<ul>
+<li>Understanding the shared responsibility model between AWS and its customers</li>
+<li>Obtaining prior approval from AWS for certain types of pentests</li>
+<li>Following the policies and guidelines set by AWS for pentesting</li>
+<li>Avoiding any disruption or damage to the cloud services or other customers</li>
+</ul>
+<h2 id="permitted-and-prohibited-activities-for-pentesting-aws-environments">
+  Permitted and Prohibited Activities for Pentesting AWS Environments
+  <a class="anchor" href="#permitted-and-prohibited-activities-for-pentesting-aws-environments">#</a>
+</h2>
+<p>AWS has a customer support policy for penetration testing that defines what types of activities are permitted or prohibited for pentesting its services. According to this policy:</p>
+<ul>
+<li>
+<p>Customers can perform security assessments or penetration tests on their own <strong>AWS infrastructure</strong> without prior approval from AWS for certain services listed under &ldquo;Permitted Services&rdquo;.</p>
+<ul>
+<li>These services include Amazon EC2 instances, WAF, NAT Gateways, Elastic Load Balancers, Amazon RDS, Amazon CloudFront etc.</li>
+<li>Customers can also host their own security assessment tooling within the <strong>AWS IP space</strong> or other cloud provider for on-premises testing.</li>
+<li>All security testing that includes <strong>Command-and-Control (C2)</strong> requires prior approval from <strong>AWS</strong>.</li>
+<li>Customers should ensure that their activities are aligned with <strong>the policy</strong> set out by <strong>AWS</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Customers are <strong>not permitted</strong> to conduct any security assessments or penetration tests on <strong>AWS infrastructure</strong> or <strong>the AWS services themselves</strong>.</p>
+<ul>
+<li>If customers discover a security issue within any of <strong>the AWS services</strong>, they should contact <strong>AWS Security</strong> immediately.</li>
+<li>If <strong>AWS receives an abuse report</strong> for activities related to customer&rsquo;s security testing,
+they will forward it to them. Customers should provide approved language detailing their use case,
+including a point-of-contact that they can share with any third-party reporters.</li>
+</ul>
+</li>
+</ul>
+<p>Some examples of prohibited activities include:</p>
+<ul>
+<li>DNS zone walking via Amazon Route 53 Hosted Zones</li>
+<li>DNS hijacking via Route 53</li>
+<li>DNS Pharming via Route 53</li>
+<li>Denial-of-service (DoS), Distributed Denial-of-service (DDoS), Simulated DoS,
+Simulated DDoS (These are subject to DDoS Simulation Testing policy)
+Port flooding Protocol flooding Request flooding (login request flooding,
+API request flooding)</li>
+</ul>
+<p>Customers seeking to test non-approved services will need to work directly with their <strong>AWS Support Team</strong>.</p>
+<h2 id="tools-and-techniques-for-pentesting-aws-environments">
+  Tools And Techniques For Pentesting Aws Environments
+  <a class="anchor" href="#tools-and-techniques-for-pentesting-aws-environments">#</a>
+</h2>
+<p>There are many tools available online that can help you perform various tasks related to pentesting aws environments such as reconnaissance,
+enumeration,
+exploitation,
+post-exploitation etc.</p>
+<p>Some examples of these tools include:</p>
+<h3 id="nmap">
+  Nmap
+  <a class="anchor" href="#nmap">#</a>
+</h3>
+<p>Nmap is a popular network scanning tool that can help you discover hosts,
+ports,
+services,
+operating systems etc.
+on your target network.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pentesting-aws-environments-a-beginners-guide">Pentesting AWS Environments: A Beginner&rsquo;s Guide</a>
+      <ul>
+        <li><a href="#benefits-and-challenges-of-pentesting-aws-environments">Benefits and Challenges of Pentesting AWS Environments</a></li>
+        <li><a href="#permitted-and-prohibited-activities-for-pentesting-aws-environments">Permitted and Prohibited Activities for Pentesting AWS Environments</a></li>
+        <li><a href="#tools-and-techniques-for-pentesting-aws-environments">Tools And Techniques For Pentesting Aws Environments</a>
+          <ul>
+            <li><a href="#nmap">Nmap</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
