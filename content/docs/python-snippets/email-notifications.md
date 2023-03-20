@@ -1,5 +1,5 @@
-Here is another variation of a *medio* *entrada de blog* in a *profesional* style about `Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.`:
 
+```
 python
 import smtplib
 smtp = smtplib.SMTP('smtp.office365.com', 587)

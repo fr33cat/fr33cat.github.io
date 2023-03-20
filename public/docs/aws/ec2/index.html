@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="templates" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://fr33cat.github.io/tags/templates/" />
-<meta property="og:updated_time" content="2014-04-02T00:00:00+00:00" />
-<title>templates | fr33cat.github.io</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/aws/ec2/" />
+
+<title>Ec2 | fr33cat.github.io</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.7b7774f3ca4400d677d21d81b24f2068423dc8677c695bf8fbfa3bed1278f6fc.js" integrity="sha256-e3d088pEANZ30h2Bsk8gaEI9yGd8aVv4&#43;/o77RJ49vw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://fr33cat.github.io/tags/templates/index.xml" title="fr33cat.github.io" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -68,7 +69,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle" checked />
     <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
       <a href="/docs/aws/" class="">AWS</a>
     </label>
@@ -84,7 +85,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aws/ec2/" class="">Ec2</a>
+    <a href="/docs/aws/ec2/" class="active">Ec2</a>
   
 
         </li>
@@ -393,7 +394,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>templates</strong>
+  <strong>Ec2</strong>
 
   <label for="toc-control">
     
@@ -406,69 +407,20 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav>
+  
+<nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#how-to-perform-api-fuzzing-on-aws-ec2">How to Perform API Fuzzing on AWS EC2</a>
       <ul>
-      
-        <li class="flex justify-between">
-          <a href="/categories/development/">Development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-        <li class="flex justify-between">
-          <a href="/tags/development/">development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/go/">go</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/hugo/">hugo</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/templates/">templates</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/themes/">themes</a>
-          <span>1</span>
-        </li>
-      
-      </ul>
-    </li>
-    
-  
   </ul>
 </nav>
+
 
 
   </aside>
@@ -478,49 +430,54 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/goisforlovers/">(Hu)go Template Primer</a>
-    </h2>
-    
-  <h5>April 2, 2014</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/golang/">golang</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/go/">go</a>, 
-      <a href="/tags/golang/">golang</a>, 
-      <a href="/tags/templates/">templates</a>, 
-      <a href="/tags/themes/">themes</a>, 
-      <a href="/tags/development/">development</a>
-  </div>
-  
-
-
-
-
-    <p>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.
-        <a href="/posts/goisforlovers/">...</a>
-      
-    </p>
-  </article>
-  
-
-  
-
-
+  <article class="markdown"><h1 id="how-to-perform-api-fuzzing-on-aws-ec2">
+  How to Perform API Fuzzing on AWS EC2
+  <a class="anchor" href="#how-to-perform-api-fuzzing-on-aws-ec2">#</a>
+</h1>
+<p>API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.</p>
+<p>In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz. Aws-fuzz is a Python script that leverages the boto3 library to interact with AWS services and generate fuzzed requests. It supports various AWS services, including EC2.</p>
+<h2 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
+</h2>
+<p>To use aws-fuzz, you need to have the following:</p>
+<ul>
+<li>Python 3 and pip installed on your system</li>
+<li>An AWS account with access keys configured</li>
+<li>The boto3 library installed (<code>pip install boto3</code>)</li>
+<li>The aws-fuzz script downloaded from <a href="https://github.com/0x4D31/aws-fuzz/blob/master/aws_fuzz.py">here</a></li>
+</ul>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>To use aws-fuzz, you need to specify the service name, the operation name, and optionally some parameters. For example, to fuzz the DescribeInstances operation of EC2, you can run:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances</code></p>
+<p>This will generate random values for all the parameters of the operation and send them to the EC2 endpoint. You can also specify some parameters manually by using the <code>-p</code> option. For example:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances -p InstanceIds=i-1234567890abcdef0</code></p>
+<p>This will use the given value for InstanceIds and fuzz the rest of the parameters.</p>
+<p>You can also specify multiple operations by using a comma-separated list. For example:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances,RunInstances</code></p>
+<p>This will fuzz both operations in sequence.</p>
+<p>The output of aws-fuzz will show you the request details and the response status code and body. You can also enable verbose mode by using <code>-v</code> option to see more details about each request.</p>
+<h2 id="tips">
+  Tips
+  <a class="anchor" href="#tips">#</a>
+</h2>
+<p>Here are some tips for using aws-fuzz effectively:</p>
+<ul>
+<li>Use a test account or a test region to avoid affecting your production resources</li>
+<li>Monitor your AWS usage and billing to avoid unexpected charges</li>
+<li>Review your CloudTrail logs to see what actions were performed by aws-fuzz</li>
+<li>Use filters or tags to limit the scope of your fuzzing targets</li>
+<li>Analyze the responses for any errors or anomalies that indicate a vulnerability</li>
+</ul>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>API fuzzing is a useful technique for pentesting AWS EC2 and other services. By using aws-fuzz, you can easily generate and send fuzzed requests to AWS endpoints and discover potential security issues. Remember to follow best practices and be responsible when performing pentesting on AWS.</p>
+</article>
  
       
 
@@ -547,6 +504,10 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -556,69 +517,20 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     <aside class="book-toc">
       <div class="book-toc-content">
         
-  <nav>
+  
+<nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#how-to-perform-api-fuzzing-on-aws-ec2">How to Perform API Fuzzing on AWS EC2</a>
       <ul>
-      
-        <li class="flex justify-between">
-          <a href="/categories/development/">Development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/categories/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-        <li class="flex justify-between">
-          <a href="/tags/development/">development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/go/">go</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/hugo/">hugo</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/templates/">templates</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/themes/">themes</a>
-          <span>1</span>
-        </li>
-      
-      </ul>
-    </li>
-    
-  
   </ul>
 </nav>
+
 
  
       </div>

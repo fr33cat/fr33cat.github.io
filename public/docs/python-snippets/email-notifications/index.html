@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Here is another variation of a medio entrada de blog in a profesional style about Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.:
+python import smtplib smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)
+ Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Here is another variation of a medio entrada de blog in a profesional style about Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.:
+python import smtplib smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)
+ Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/email-notifications/" />
+
+<title>Email Notifications | fr33cat.github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.7b7774f3ca4400d677d21d81b24f2068423dc8677c695bf8fbfa3bed1278f6fc.js" integrity="sha256-e3d088pEANZ30h2Bsk8gaEI9yGd8aVv4&#43;/o77RJ49vw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>fr33cat.github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
+    <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
+      <a href="/docs/aws/" class="">AWS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/ec2/" class="">Ec2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/lambda/" class="">Lambda</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/s3/" class="">S3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle"  />
+    <label for="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="flex justify-between">
+      <a href="/docs/azure/" class="">AZURE</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle" checked />
+    <label for="section-310247f13514510bfdda8e074fdf55f3" class="flex justify-between">
+      <a href="/docs/python-snippets/" class="">Python Snippets</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/email-notifications/" class="active">Email Notifications</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Email Notifications</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>Here is another variation of a <em>medio</em> <em>entrada de blog</em> in a <em>profesional</em> style about <code>Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.</code>:</p>
+<p>python
+import smtplib
+smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)</p>
+<pre><code>
+Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.
+
+Next, you need to authenticate with your username and password using the login method:
+
+```python
+smtp.login('user@company.co', 'password')
+</code></pre><p>Then, you can compose your email message using the email module. The email module helps you create well-formed email messages with headers, attachments, HTML content, etc.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> email.message <span style="color:#f92672">import</span> EmailMessage
+msg <span style="color:#f92672">=</span> EmailMessage()
+msg[<span style="color:#e6db74">&#39;Subject&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Python email test&#39;</span>
+msg[<span style="color:#e6db74">&#39;From&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;user@company.co&#39;</span>
+msg[<span style="color:#e6db74">&#39;To&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ron@company.co&#39;</span>
+msg<span style="color:#f92672">.</span>set_content(<span style="color:#e6db74">&#39;This is an email sent from Python.&#39;</span>)
+</code></pre></div><p>Finally, you can send your message using the send_message method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">smtp<span style="color:#f92672">.</span>send_message(msg)
+smtp<span style="color:#f92672">.</span>quit()
+</code></pre></div><p>This will send your email message and close the connection with the SMTP server.</p>
+<p>Using EWS</p>
+<p>Another option for sending emails using a corporate exchange server is to use the EWS API. EWS stands for Exchange Web Services and is a web service that allows you to access various features of Microsoft Exchange Server such as calendars, contacts, tasks, etc.</p>
+<p>To use EWS from Python, you need to install a third-party library called exchangelib. You can install it using pip:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install exchangelib
+</code></pre></div><p>Then, you need to import it and create an Account object with your credentials and server details. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> exchangelib <span style="color:#f92672">import</span> Account, Credentials, Configuration
+creds <span style="color:#f92672">=</span> Credentials(<span style="color:#e6db74">&#39;user@company.co&#39;</span>, <span style="color:#e6db74">&#39;password&#39;</span>)
+config <span style="color:#f92672">=</span> Configuration(server<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outlook.office365.com&#39;</span>, credentials<span style="color:#f92672">=</span>creds)
+account <span style="color:#f92672">=</span> Account(<span style="color:#e6db74">&#39;user@company.co&#39;</span>, config<span style="color:#f92672">=</span>config)
+</code></pre></div><p>Note that this example uses Office 365 as the EWS server, but you can replace it with your own corporate EWS server address.</p>
+<p>Next, you can create an EmailMessage object with your message details:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> exchangelib <span style="color:#f92672">import</span> EmailMessage
+msg <span style="color:#f92672">=</span> EmailMessage(
+account<span style="color:#f92672">=</span>account,
+subject<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Python email test&#39;</span>,
+body<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;This is an email sent from Python.&#39;</span>,
+to_recipients<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;ron@company.co&#39;</span>]
+)
+</code></pre></div><p>Finally, you can send your message using the send method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">msg<span style="color:#f92672">.</span>send()
+</code></pre></div><p>This will send your email message using EWS.</p>
+<p>Conclusion</p>
+<p>In this blog post, I showed you how to send emails using Python and a corporate exchange server. You can use either smtplib or exchangelib depending on your preference and availability of SMTP or EWS servers.</p>
+<pre><code></code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

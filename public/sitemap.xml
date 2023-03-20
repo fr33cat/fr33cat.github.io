@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/</loc>
+  </url>
+  
+  <url>
     <loc>https://fr33cat.github.io/posts/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -91,7 +95,19 @@
   </url>
   
   <url>
+    <loc>https://fr33cat.github.io/docs/aws/ec2/</loc>
+  </url>
+  
+  <url>
     <loc>https://fr33cat.github.io/docs/aws/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/aws/s3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/email-notifications/</loc>
   </url>
   
   <url>

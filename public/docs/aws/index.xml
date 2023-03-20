@@ -8,12 +8,31 @@
     <language>en-us</language><atom:link href="https://fr33cat.github.io/docs/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>https://fr33cat.github.io/docs/aws/ec2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/aws/ec2/</guid>
+      <description>How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://fr33cat.github.io/docs/aws/lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fr33cat.github.io/docs/aws/lambda/</guid>
-      <description>How to Exploit AWS Lambda Functions for Serverless Penetration Testing #  Serverless computing is a paradigm that allows developers to run code without provisioning or managing servers. AWS Lambda is one of the most popular serverless platforms, which lets users run code in response to events such as HTTP requests, database changes, or messages from other services.
-However, serverless computing also introduces new security challenges and attack vectors. In this blog post, we will explore how to exploit AWS Lambda functions for serverless penetration testing.</description>
+      <description>How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
+Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/aws/s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/aws/s3/</guid>
+      <description>How to Find and Exploit Misconfigured S3 Buckets #  Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques.</description>
     </item>
     
   </channel>
