@@ -79,7 +79,6 @@ msg.send()
 This will send your email message using EWS.
 
 ## Implementation example
-{{< expand "send-email.py" "..." >}}
 ```python
 import smtplib, ssl
 
@@ -101,5 +100,4 @@ with smtplib.SMTP(smtp_server, port) as server:
     server.login(sender_email, password)
     server.sendmail(sender_email, receiver_email, message)
 ```
-{{< /expand >}}
 
