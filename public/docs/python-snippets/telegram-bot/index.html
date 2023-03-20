@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="Simple Python script that responds to certain strings:
+import telebot bot_token = &#34;YOUR_BOT_TOKEN_HERE&#34; bot = telebot.TeleBot(bot_token) @bot.message_handler(func=lambda message: True) def handle_message(message): text = message.text.lower() chat_id = message.chat.id if &#34;hello&#34; in text: bot.send_message(chat_id, &#34;Hello there!&#34;) elif &#34;how are you&#34; in text: bot.send_message(chat_id, &#34;I&#39;m doing well, thank you for asking!&#34;) else: bot.send_message(chat_id, &#34;Sorry, I didn&#39;t understand that.&#34;) bot.polling() This script uses the telebot library to create a Telegram bot and handle incoming messages.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://fr33cat.github.io/tags/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Simple Python script that responds to certain strings:
+import telebot bot_token = &#34;YOUR_BOT_TOKEN_HERE&#34; bot = telebot.TeleBot(bot_token) @bot.message_handler(func=lambda message: True) def handle_message(message): text = message.text.lower() chat_id = message.chat.id if &#34;hello&#34; in text: bot.send_message(chat_id, &#34;Hello there!&#34;) elif &#34;how are you&#34; in text: bot.send_message(chat_id, &#34;I&#39;m doing well, thank you for asking!&#34;) else: bot.send_message(chat_id, &#34;Sorry, I didn&#39;t understand that.&#34;) bot.polling() This script uses the telebot library to create a Telegram bot and handle incoming messages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/telegram-bot/" />
 
-<title>Tags | fr33cat.github.io</title>
+<title>Telegram Bot | fr33cat.github.io</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.0c59329640e2c403b9feceac89a8d84774c7f8744194f8f97b0dea302c8c0850.js" integrity="sha256-DFkylkDixAO5/s6siajYR3TH&#43;HRBlPj5ew3qMCyMCFA=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://fr33cat.github.io/tags/index.xml" title="fr33cat.github.io" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -149,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle"  />
+    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle" checked />
     <label for="section-310247f13514510bfdda8e074fdf55f3" class="flex justify-between">
       <a href="/docs/python-snippets/" class="">Python Snippets</a>
     </label>
@@ -204,7 +205,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/python-snippets/telegram-bot/" class="">Telegram Bot</a>
+    <a href="/docs/python-snippets/telegram-bot/" class="active">Telegram Bot</a>
   
 
         </li>
@@ -263,7 +264,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Tags</strong>
+  <strong>Telegram Bot</strong>
 
   <label for="toc-control">
     
@@ -277,11 +278,27 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  
+  <article class="markdown"><p>Simple Python script that responds to certain strings:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> telebot
 
-  
+bot_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_BOT_TOKEN_HERE&#34;</span>
+bot <span style="color:#f92672">=</span> telebot<span style="color:#f92672">.</span>TeleBot(bot_token)
 
+<span style="color:#a6e22e">@bot.message_handler</span>(func<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> message: True)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle_message</span>(message):
+    text <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>lower()
+    chat_id <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span>chat<span style="color:#f92672">.</span>id
 
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;hello&#34;</span> <span style="color:#f92672">in</span> text:
+        bot<span style="color:#f92672">.</span>send_message(chat_id, <span style="color:#e6db74">&#34;Hello there!&#34;</span>)
+    <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;how are you&#34;</span> <span style="color:#f92672">in</span> text:
+        bot<span style="color:#f92672">.</span>send_message(chat_id, <span style="color:#e6db74">&#34;I&#39;m doing well, thank you for asking!&#34;</span>)
+    <span style="color:#66d9ef">else</span>:
+        bot<span style="color:#f92672">.</span>send_message(chat_id, <span style="color:#e6db74">&#34;Sorry, I didn&#39;t understand that.&#34;</span>)
+
+bot<span style="color:#f92672">.</span>polling()
+</code></pre></div><p>This script uses the telebot library to create a Telegram bot and handle incoming messages. The handle_message function is decorated with the @bot.message_handler decorator to register it as a message handler. This function checks the text of each incoming message for certain strings (in this case, &ldquo;hello&rdquo; and &ldquo;how are you&rdquo;) and responds accordingly. You can modify this script to suit your specific needs.</p>
+</article>
  
       
 
@@ -307,6 +324,10 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
       </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
   
  
 

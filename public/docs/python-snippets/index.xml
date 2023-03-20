@@ -39,5 +39,15 @@ The cryptography library provides a simple and easy-to-use API for performing co
 First, we define two functions: encrypt_message() and decrypt_message().</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/telegram-bot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/telegram-bot/</guid>
+      <description>Simple Python script that responds to certain strings:
+import telebot bot_token = &amp;#34;YOUR_BOT_TOKEN_HERE&amp;#34; bot = telebot.TeleBot(bot_token) @bot.message_handler(func=lambda message: True) def handle_message(message): text = message.text.lower() chat_id = message.chat.id if &amp;#34;hello&amp;#34; in text: bot.send_message(chat_id, &amp;#34;Hello there!&amp;#34;) elif &amp;#34;how are you&amp;#34; in text: bot.send_message(chat_id, &amp;#34;I&amp;#39;m doing well, thank you for asking!&amp;#34;) else: bot.send_message(chat_id, &amp;#34;Sorry, I didn&amp;#39;t understand that.&amp;#34;) bot.polling() This script uses the telebot library to create a Telegram bot and handle incoming messages.</description>
+    </item>
+    
   </channel>
 </rss>
