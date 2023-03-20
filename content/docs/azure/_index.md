@@ -4,6 +4,7 @@ title: "AZURE"
 bookCollapseSection: true
 ---
 
-{{< hint [warning] >}}
-... under construction ...
-{< /hint >}}
+
+{{< hint warning >}}
+Under construction
+{{< /hint >}}

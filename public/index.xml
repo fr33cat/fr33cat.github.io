@@ -86,9 +86,10 @@ Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scala
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fr33cat.github.io/docs/python-snippets/email-notifications/</guid>
-      <description>Here is another variation of a medio entrada de blog in a profesional style about Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.:
-python import smtplib smtp = smtplib.SMTP(&amp;lsquo;smtp.office365.com&amp;rsquo;, 587)
- Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address.</description>
+      <description>Using SMTPlib #  In this example we will be using smtplib
+import smtplib smtp = smtplib.SMTP(&amp;#39;smtp.office365.com&amp;#39;, 587) Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.
+Next, you need to authenticate with your username and password using the login method:
+smtp.login(&amp;#39;user@company.co&amp;#39;, &amp;#39;password&amp;#39;) Then, you can compose your email message using the email module.</description>
     </item>
     
     <item>

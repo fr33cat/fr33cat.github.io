@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Here is another variation of a medio entrada de blog in a profesional style about Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.:
-python import smtplib smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)
- Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address.">
+<meta name="description" content="Using SMTPlib #  In this example we will be using smtplib
+import smtplib smtp = smtplib.SMTP(&#39;smtp.office365.com&#39;, 587) Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.
+Next, you need to authenticate with your username and password using the login method:
+smtp.login(&#39;user@company.co&#39;, &#39;password&#39;) Then, you can compose your email message using the email module.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="Here is another variation of a medio entrada de blog in a profesional style about Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.:
-python import smtplib smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)
- Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address." />
+<meta property="og:description" content="Using SMTPlib #  In this example we will be using smtplib
+import smtplib smtp = smtplib.SMTP(&#39;smtp.office365.com&#39;, 587) Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.
+Next, you need to authenticate with your username and password using the login method:
+smtp.login(&#39;user@company.co&#39;, &#39;password&#39;) Then, you can compose your email message using the email module." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/email-notifications/" />
 
@@ -19,7 +21,7 @@ python import smtplib smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7b7774f3ca4400d677d21d81b24f2068423dc8677c695bf8fbfa3bed1278f6fc.js" integrity="sha256-e3d088pEANZ30h2Bsk8gaEI9yGd8aVv4&#43;/o77RJ49vw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cc802e02d12f8fe26d1a3afdac4b285c28ba24330ab477fbd64e3d5fc402d12e.js" integrity="sha256-zIAuAtEvj&#43;JtGjr9rEsoXCi6JDMKtHf71k49X8QC0S4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -410,7 +412,17 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#using-smtplib">Using SMTPlib</a></li>
+        <li><a href="#using-ews">Using EWS</a></li>
+        <li><a href="#implementation-example">Implementation example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -421,18 +433,17 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Here is another variation of a <em>medio</em> <em>entrada de blog</em> in a <em>profesional</em> style about <code>Create a blog post in which you describe how to send emails using a corporate exchange server using python3. Provide a sample code for that. Write it in english.</code>:</p>
-<p>python
-import smtplib
-smtp = smtplib.SMTP(&lsquo;smtp.office365.com&rsquo;, 587)</p>
-<pre><code>
-Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.
-
-Next, you need to authenticate with your username and password using the login method:
-
-```python
-smtp.login('user@company.co', 'password')
-</code></pre><p>Then, you can compose your email message using the email module. The email module helps you create well-formed email messages with headers, attachments, HTML content, etc.</p>
+  <article class="markdown"><h2 id="using-smtplib">
+  Using SMTPlib
+  <a class="anchor" href="#using-smtplib">#</a>
+</h2>
+<p>In this example we will be using smtplib</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> smtplib
+smtp <span style="color:#f92672">=</span> smtplib<span style="color:#f92672">.</span>SMTP(<span style="color:#e6db74">&#39;smtp.office365.com&#39;</span>, <span style="color:#ae81ff">587</span>)
+</code></pre></div><p>Note that this example uses Office 365 as the SMTP server, but you can replace it with your own corporate SMTP server address. You can also use port 465 if your server supports SSL encryption.</p>
+<p>Next, you need to authenticate with your username and password using the login method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">smtp<span style="color:#f92672">.</span>login(<span style="color:#e6db74">&#39;user@company.co&#39;</span>, <span style="color:#e6db74">&#39;password&#39;</span>)
+</code></pre></div><p>Then, you can compose your email message using the email module. The email module helps you create well-formed email messages with headers, attachments, HTML content, etc.</p>
 <p>For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> email.message <span style="color:#f92672">import</span> EmailMessage
 msg <span style="color:#f92672">=</span> EmailMessage()
@@ -444,7 +455,10 @@ msg<span style="color:#f92672">.</span>set_content(<span style="color:#e6db74">&
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">smtp<span style="color:#f92672">.</span>send_message(msg)
 smtp<span style="color:#f92672">.</span>quit()
 </code></pre></div><p>This will send your email message and close the connection with the SMTP server.</p>
-<p>Using EWS</p>
+<h2 id="using-ews">
+  Using EWS
+  <a class="anchor" href="#using-ews">#</a>
+</h2>
 <p>Another option for sending emails using a corporate exchange server is to use the EWS API. EWS stands for Exchange Web Services and is a web service that allows you to access various features of Microsoft Exchange Server such as calendars, contacts, tasks, etc.</p>
 <p>To use EWS from Python, you need to install a third-party library called exchangelib. You can install it using pip:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install exchangelib
@@ -465,9 +479,30 @@ to_recipients<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#
 </code></pre></div><p>Finally, you can send your message using the send method:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">msg<span style="color:#f92672">.</span>send()
 </code></pre></div><p>This will send your email message using EWS.</p>
-<p>Conclusion</p>
-<p>In this blog post, I showed you how to send emails using Python and a corporate exchange server. You can use either smtplib or exchangelib depending on your preference and availability of SMTP or EWS servers.</p>
-<pre><code></code></pre></article>
+<h2 id="implementation-example">
+  Implementation example
+  <a class="anchor" href="#implementation-example">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> smtplib<span style="color:#f92672">,</span> ssl
+
+smtp_server <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;smtp.office365.com&#34;</span>
+port <span style="color:#f92672">=</span> <span style="color:#ae81ff">587</span>  <span style="color:#75715e"># For starttls</span>
+sender_email <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;youremail@domain.com&#34;</span>
+receiver_email <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;recipient@domain.com&#34;</span>
+password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;your password here&gt;&#34;</span>
+message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">Subject: Hi there
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">This message is sent from Python.&#34;&#34;&#34;</span>
+
+context <span style="color:#f92672">=</span> ssl<span style="color:#f92672">.</span>create_default_context()
+<span style="color:#66d9ef">with</span> smtplib<span style="color:#f92672">.</span>SMTP(smtp_server, port) <span style="color:#66d9ef">as</span> server:
+    server<span style="color:#f92672">.</span>ehlo()  <span style="color:#75715e"># Can be omitted</span>
+    server<span style="color:#f92672">.</span>starttls(context<span style="color:#f92672">=</span>context)
+    server<span style="color:#f92672">.</span>ehlo()  <span style="color:#75715e"># Can be omitted</span>
+    server<span style="color:#f92672">.</span>login(sender_email, password)
+    server<span style="color:#f92672">.</span>sendmail(sender_email, receiver_email, message)
+</code></pre></div></article>
  
       
 
@@ -508,7 +543,17 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#using-smtplib">Using SMTPlib</a></li>
+        <li><a href="#using-ews">Using EWS</a></li>
+        <li><a href="#implementation-example">Implementation example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  
