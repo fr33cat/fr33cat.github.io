@@ -1,3 +1,6 @@
+---
+bookToC = false
+---
 # How to Perform API Fuzzing on AWS EC2
 
 API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.

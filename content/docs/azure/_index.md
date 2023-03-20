@@ -4,7 +4,6 @@ title: "AZURE"
 bookCollapseSection: true
 ---
 
-
 {{< hint warning >}}
 Under construction
 {{< /hint >}}

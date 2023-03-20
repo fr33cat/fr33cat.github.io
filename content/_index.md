@@ -1,6 +1,7 @@
 ---
 title: Home - fr33cat.github.io
 type: docs
+bookToC: false
 ---
 
 # Explore Pentesting with fr33cat.github.io: Notes and Recommendations from a lazy cat
