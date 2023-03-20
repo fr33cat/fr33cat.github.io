@@ -18,5 +18,16 @@ Next, you need to authenticate with your username and password using the login m
 smtp.login(&amp;#39;user@company.co&amp;#39;, &amp;#39;password&amp;#39;) Then, you can compose your email message using the email module.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/encrypted-emails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/encrypted-emails/</guid>
+      <description>Encrypting and Decrypting Messages with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to encrypt and decrypt messages.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the Fernet class from the cryptography.fernet module to perform symmetric encryption and decryption.
+First, we define two functions: encrypt_message() and decrypt_message().</description>
+    </item>
+    
   </channel>
 </rss>
