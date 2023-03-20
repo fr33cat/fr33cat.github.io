@@ -1,6 +1,7 @@
 
-```
-python
+In this example we will be using smtplib
+
+```python
 import smtplib
 smtp = smtplib.SMTP('smtp.office365.com', 587)
 ```
