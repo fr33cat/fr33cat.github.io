@@ -1,4 +1,5 @@
 
+## Using SMTPlib
 In this example we will be using smtplib
 
 ```python
@@ -36,7 +37,7 @@ smtp.quit()
 
 This will send your email message and close the connection with the SMTP server.
 
-Using EWS
+## Using EWS
 
 Another option for sending emails using a corporate exchange server is to use the EWS API. EWS stands for Exchange Web Services and is a web service that allows you to access various features of Microsoft Exchange Server such as calendars, contacts, tasks, etc.
 
