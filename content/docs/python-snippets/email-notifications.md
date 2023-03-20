@@ -76,8 +76,25 @@ msg.send()
 
 This will send your email message using EWS.
 
-Conclusion
+## Implementation example
+{{< expand "send-email.py" "..." >}}
+```import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-In this blog post, I showed you how to send emails using Python and a corporate exchange server. You can use either smtplib or exchangelib depending on your preference and availability of SMTP or EWS servers.
+server = smtplib.SMTP('smtp.office365.com', 587)
+server.starttls()
+server.login('youremail@domain.com', 'yourpassword')
 
-```
+msg = MIMEMultipart()
+msg['From'] = 'youremail@domain.com'
+msg['To'] = 'recipient@domain.com'
+msg['Subject'] = 'Email Subject'
+
+body = 'Email Body'
+msg.attach(MIMEText(body, 'plain'))
+
+text = msg.as_string()
+server.sendmail('youremail@domain.com', 'recipient@domain.com', text)```
+{{< /expand >}}
+
