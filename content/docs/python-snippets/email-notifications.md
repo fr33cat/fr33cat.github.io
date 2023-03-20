@@ -79,23 +79,26 @@ This will send your email message using EWS.
 
 ## Implementation example
 {{< expand "send-email.py" "..." >}}
-```import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+```python
+import smtplib, ssl
 
-server = smtplib.SMTP('smtp.office365.com', 587)
-server.starttls()
-server.login('youremail@domain.com', 'yourpassword')
+smtp_server = "smtp.office365.com"
+port = 587  # For starttls
+sender_email = "youremail@domain.com"
+receiver_email = "recipient@domain.com"
+password = "<your password here>"
+message = """\
+Subject: Hi there
 
-msg = MIMEMultipart()
-msg['From'] = 'youremail@domain.com'
-msg['To'] = 'recipient@domain.com'
-msg['Subject'] = 'Email Subject'
+This message is sent from Python."""
 
-body = 'Email Body'
-msg.attach(MIMEText(body, 'plain'))
-
-text = msg.as_string()
-server.sendmail('youremail@domain.com', 'recipient@domain.com', text)```
+context = ssl.create_default_context()
+with smtplib.SMTP(smtp_server, port) as server:
+    server.ehlo()  # Can be omitted
+    server.starttls(context=context)
+    server.ehlo()  # Can be omitted
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, message)
+```
 {{< /expand >}}
 
