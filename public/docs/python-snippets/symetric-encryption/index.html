@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Encrypting and Decrypting Messages with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to encrypt and decrypt messages.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the Fernet class from the cryptography.fernet module to perform symmetric encryption and decryption.
+First, we define two functions: encrypt_message() and decrypt_message().">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Encrypting and Decrypting Messages with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to encrypt and decrypt messages.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the Fernet class from the cryptography.fernet module to perform symmetric encryption and decryption.
+First, we define two functions: encrypt_message() and decrypt_message()." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/symetric-encryption/" />
+
+<title>Symetric Encryption | fr33cat.github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.2d88b7d309eca4be51dea13e9b77192d9e151de4d269dcc2dae00a4eb956ee4d.js" integrity="sha256-LYi30wnspL5R3qE&#43;m3cZLZ4VHeTSadzC2uAKTrlW7k0=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>fr33cat.github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
+    <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
+      <a href="/docs/aws/" class="">AWS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/ec2/" class="">Ec2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/lambda/" class="">Lambda</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/s3/" class="">S3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle"  />
+    <label for="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="flex justify-between">
+      <a href="/docs/azure/" class="">AZURE</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle" checked />
+    <label for="section-310247f13514510bfdda8e074fdf55f3" class="flex justify-between">
+      <a href="/docs/python-snippets/" class="">Python Snippets</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/asymetric-encryption/" class="">Asymetric Encryption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/email-notifications/" class="">Email Notifications</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/symetric-encryption/" class="active">Symetric Encryption</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Symetric Encryption</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="encrypting-and-decrypting-messages-with-python">
+  Encrypting and Decrypting Messages with Python
+  <a class="anchor" href="#encrypting-and-decrypting-messages-with-python">#</a>
+</h1>
+<p>In this blog post, we’ll take a look at how to use the cryptography library in Python to encrypt and decrypt messages.</p>
+<p>The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the Fernet class from the cryptography.fernet module to perform symmetric encryption and decryption.</p>
+<p>First, we define two functions: encrypt_message() and decrypt_message(). The encrypt_message() function takes in a message as input and generates a key using the Fernet.generate_key() method. It then creates an instance of the Fernet class using this key and uses it to encrypt the message. The encrypted message and key are returned as output.</p>
+<p>The decrypt_message() function takes in an encrypted message and key as input. It creates an instance of the Fernet class using the provided key and uses it to decrypt the encrypted message. The decrypted message is returned as output.</p>
+<p>In our example script, we demonstrate how to use these two functions by encrypting a simple “Hello World!” message and then decrypting it again.</p>
+<p>This is just one example of how you can use Python for cryptography tasks. There are many other libraries available that provide more advanced functionality for encryption, decryption, hashing, digital signatures, etc.</p>
+<h1 id="code-example">
+  Code example
+  <a class="anchor" href="#code-example">#</a>
+</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> cryptography.fernet <span style="color:#f92672">import</span> Fernet
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_message</span>(message):
+    key <span style="color:#f92672">=</span> Fernet<span style="color:#f92672">.</span>generate_key()
+    f <span style="color:#f92672">=</span> Fernet(key)
+    encrypted_message <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>encrypt(message<span style="color:#f92672">.</span>encode())
+    <span style="color:#66d9ef">return</span> encrypted_message, key
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decrypt_message</span>(encrypted_message, key):
+    f <span style="color:#f92672">=</span> Fernet(key)
+    decrypted_message <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>decrypt(encrypted_message)<span style="color:#f92672">.</span>decode()
+    <span style="color:#66d9ef">return</span> decrypted_message
+
+message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+encrypted_message, key <span style="color:#f92672">=</span> encrypt_message(message)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Encrypted message: {encrypted_message}&#34;</span>)
+
+decrypted_message <span style="color:#f92672">=</span> decrypt_message(encrypted_message, key)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Decrypted message: {decrypted_message}&#34;</span>)
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

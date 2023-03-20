@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Using Public/Private Key Pairs for Encryption and Decryption with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to generate a public/private key pair and use them for encryption and decryption.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair and perform RSA encryption with OAEP padding.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Using Public/Private Key Pairs for Encryption and Decryption with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to generate a public/private key pair and use them for encryption and decryption.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair and perform RSA encryption with OAEP padding." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/" />
+
+<title>Asymetric Encryption | fr33cat.github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.2d88b7d309eca4be51dea13e9b77192d9e151de4d269dcc2dae00a4eb956ee4d.js" integrity="sha256-LYi30wnspL5R3qE&#43;m3cZLZ4VHeTSadzC2uAKTrlW7k0=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>fr33cat.github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
+    <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
+      <a href="/docs/aws/" class="">AWS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/ec2/" class="">Ec2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/lambda/" class="">Lambda</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aws/s3/" class="">S3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle"  />
+    <label for="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="flex justify-between">
+      <a href="/docs/azure/" class="">AZURE</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle" checked />
+    <label for="section-310247f13514510bfdda8e074fdf55f3" class="flex justify-between">
+      <a href="/docs/python-snippets/" class="">Python Snippets</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/asymetric-encryption/" class="active">Asymetric Encryption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/email-notifications/" class="">Email Notifications</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python-snippets/symetric-encryption/" class="">Symetric Encryption</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Asymetric Encryption</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="using-publicprivate-key-pairs-for-encryption-and-decryption-with-python">
+  Using Public/Private Key Pairs for Encryption and Decryption with Python
+  <a class="anchor" href="#using-publicprivate-key-pairs-for-encryption-and-decryption-with-python">#</a>
+</h1>
+<p>In this blog post, we’ll take a look at how to use the cryptography library in Python to generate a public/private key pair and use them for encryption and decryption.</p>
+<p>The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair and perform RSA encryption with OAEP padding.</p>
+<p>First, we generate a private/public key pair using the rsa.generate_private_key() method. We then serialize the private key to PEM format using the private_key.private_bytes() method. This allows us to save the private key to disk or transmit it over a network.</p>
+<p>Next, we demonstrate how to load a private key from PEM format using the serialization.load_pem_private_key() method. This allows us to load a previously generated private key from disk or receive it over a network.</p>
+<p>Once we have our public/private key pair, we can use them to encrypt and decrypt messages. In our example script, we encrypt a simple “Hello World!” message using the public key and then decrypt it again using the private key.</p>
+<p>This is just one example of how you can use Python for cryptography tasks. There are many other libraries available that provide more advanced functionality for encryption, decryption, hashing, digital signatures, etc.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> cryptography.hazmat.primitives.asymmetric <span style="color:#f92672">import</span> rsa
+<span style="color:#f92672">from</span> cryptography.hazmat.primitives <span style="color:#f92672">import</span> serialization
+<span style="color:#f92672">from</span> cryptography.hazmat.primitives.asymmetric <span style="color:#f92672">import</span> padding
+<span style="color:#f92672">from</span> cryptography.hazmat.primitives <span style="color:#f92672">import</span> hashes
+
+<span style="color:#75715e"># Generate a private/public key pair</span>
+private_key <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>generate_private_key(
+    public_exponent<span style="color:#f92672">=</span><span style="color:#ae81ff">65537</span>,
+    key_size<span style="color:#f92672">=</span><span style="color:#ae81ff">2048</span>,
+)
+
+public_key <span style="color:#f92672">=</span> private_key<span style="color:#f92672">.</span>public_key()
+
+<span style="color:#75715e"># Serialize the private key to PEM format</span>
+pem <span style="color:#f92672">=</span> private_key<span style="color:#f92672">.</span>private_bytes(
+    encoding<span style="color:#f92672">=</span>serialization<span style="color:#f92672">.</span>Encoding<span style="color:#f92672">.</span>PEM,
+    format<span style="color:#f92672">=</span>serialization<span style="color:#f92672">.</span>PrivateFormat<span style="color:#f92672">.</span>PKCS8,
+    encryption_algorithm<span style="color:#f92672">=</span>serialization<span style="color:#f92672">.</span>NoEncryption()
+)
+
+<span style="color:#75715e"># Load a private key from PEM format</span>
+private_key <span style="color:#f92672">=</span> serialization<span style="color:#f92672">.</span>load_pem_private_key(
+    pem,
+    password<span style="color:#f92672">=</span>None,
+)
+
+<span style="color:#75715e"># Encrypt a message using the public key</span>
+message <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;Hello World!&#34;</span>
+encrypted_message <span style="color:#f92672">=</span> public_key<span style="color:#f92672">.</span>encrypt(
+    message,
+    padding<span style="color:#f92672">.</span>OAEP(
+        mgf<span style="color:#f92672">=</span>padding<span style="color:#f92672">.</span>MGF1(algorithm<span style="color:#f92672">=</span>hashes<span style="color:#f92672">.</span>SHA256()),
+        algorithm<span style="color:#f92672">=</span>hashes<span style="color:#f92672">.</span>SHA256(),
+        label<span style="color:#f92672">=</span>None
+    )
+)
+
+<span style="color:#75715e"># Decrypt the message using the private key</span>
+decrypted_message <span style="color:#f92672">=</span> private_key<span style="color:#f92672">.</span>decrypt(
+    encrypted_message,
+    padding<span style="color:#f92672">.</span>OAEP(
+        mgf<span style="color:#f92672">=</span>padding<span style="color:#f92672">.</span>MGF1(algorithm<span style="color:#f92672">=</span>hashes<span style="color:#f92672">.</span>SHA256()),
+        algorithm<span style="color:#f92672">=</span>hashes<span style="color:#f92672">.</span>SHA256(),
+        label<span style="color:#f92672">=</span>None
+    )
+)
+</code></pre></div><p>This code will use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair. It will then use these keys to encrypt and decrypt a message using RSA encryption with OAEP padding.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -82,6 +82,16 @@ Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scala
     
     <item>
       <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/</guid>
+      <description>Using Public/Private Key Pairs for Encryption and Decryption with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to generate a public/private key pair and use them for encryption and decryption.
+The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair and perform RSA encryption with OAEP padding.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://fr33cat.github.io/docs/python-snippets/email-notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -94,10 +104,10 @@ smtp.login(&amp;#39;user@company.co&amp;#39;, &amp;#39;password&amp;#39;) Then, 
     
     <item>
       <title></title>
-      <link>https://fr33cat.github.io/docs/python-snippets/encrypted-emails/</link>
+      <link>https://fr33cat.github.io/docs/python-snippets/symetric-encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fr33cat.github.io/docs/python-snippets/encrypted-emails/</guid>
+      <guid>https://fr33cat.github.io/docs/python-snippets/symetric-encryption/</guid>
       <description>Encrypting and Decrypting Messages with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to encrypt and decrypt messages.
 The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the Fernet class from the cryptography.fernet module to perform symmetric encryption and decryption.
 First, we define two functions: encrypt_message() and decrypt_message().</description>
