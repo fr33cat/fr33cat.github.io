@@ -15,3 +15,4 @@ enableGitInfo = false
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'dark'
   BookToC = false
+  BookLogo = 'logo.png'
