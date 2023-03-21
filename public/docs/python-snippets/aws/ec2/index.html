@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
-Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated.">
+<meta name="description" content="How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
-Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated." />
+<meta property="og:description" content="How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fr33cat.github.io/docs/aws/lambda/" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/python-snippets/aws/ec2/" />
 
-<title>Lambda | fr33cat.github.io</title>
+<title>Ec2 | fr33cat.github.io</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
@@ -69,7 +69,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle" checked />
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
     <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
       <a href="/docs/aws/" class="">AWS</a>
     </label>
@@ -98,7 +98,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aws/lambda/" class="active">Lambda</a>
+    <a href="/docs/aws/lambda/" class="">Lambda</a>
   
 
         </li>
@@ -150,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle"  />
+    <input type="checkbox" id="section-310247f13514510bfdda8e074fdf55f3" class="toggle" checked />
     <label for="section-310247f13514510bfdda8e074fdf55f3" class="flex justify-between">
       <a href="/docs/python-snippets/" class="">Python Snippets</a>
     </label>
@@ -166,7 +166,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ef622bb7391427108ce119e710d61e38" class="toggle"  />
+    <input type="checkbox" id="section-ef622bb7391427108ce119e710d61e38" class="toggle" checked />
     <label for="section-ef622bb7391427108ce119e710d61e38" class="flex justify-between">
       <a href="/docs/python-snippets/aws/" class="">AWS</a>
     </label>
@@ -182,7 +182,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/python-snippets/aws/ec2/" class="">Ec2</a>
+    <a href="/docs/python-snippets/aws/ec2/" class="active">Ec2</a>
   
 
         </li>
@@ -384,7 +384,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Lambda</strong>
+  <strong>Ec2</strong>
 
   <label for="toc-control">
     
@@ -398,47 +398,53 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="how-to-pentest-aws-lambda-functions">
-  How to Pentest AWS Lambda Functions
-  <a class="anchor" href="#how-to-pentest-aws-lambda-functions">#</a>
+  <article class="markdown"><h1 id="how-to-perform-api-fuzzing-on-aws-ec2">
+  How to Perform API Fuzzing on AWS EC2
+  <a class="anchor" href="#how-to-perform-api-fuzzing-on-aws-ec2">#</a>
 </h1>
-<p>AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.</p>
-<p>Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated. However, there are some techniques that can help you discover and exploit vulnerabilities in Lambda functions and their configurations.</p>
-<h2 id="discovering-lambda-functions">
-  Discovering Lambda Functions
-  <a class="anchor" href="#discovering-lambda-functions">#</a>
+<p>API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.</p>
+<p>In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz. Aws-fuzz is a Python script that leverages the boto3 library to interact with AWS services and generate fuzzed requests. It supports various AWS services, including EC2.</p>
+<h2 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
 </h2>
-<p>One of the first steps in pentesting AWS Lambda functions is to find out which functions exist and how they are invoked. There are several ways to do this:</p>
+<p>To use aws-fuzz, you need to have the following:</p>
 <ul>
-<li>Use the AWS CLI or SDK to list all the functions in a region: <code>aws lambda list-functions --region &lt;region&gt;</code></li>
-<li>Use the AWS Management Console to browse through the functions and their triggers</li>
-<li>Use tools like <a href="https://github.com/Coalfire-Research/Lambhack">Lambhack</a> or <a href="https://github.com/RhinoSecurityLabs/pacu">Pacu</a> to enumerate Lambda functions and their metadata</li>
-<li>Use passive reconnaissance techniques such as DNS enumeration, subdomain scanning, web crawling, etc. to find endpoints that invoke Lambda functions</li>
-<li>Use active reconnaissance techniques such as port scanning, banner grabbing, fuzzing, etc. to identify Lambda function endpoints and their parameters</li>
+<li>Python 3 and pip installed on your system</li>
+<li>An AWS account with access keys configured</li>
+<li>The boto3 library installed (<code>pip install boto3</code>)</li>
+<li>The aws-fuzz script downloaded from <a href="https://github.com/0x4D31/aws-fuzz/blob/master/aws_fuzz.py">here</a></li>
 </ul>
-<h2 id="exploiting-lambda-functions">
-  Exploiting Lambda Functions
-  <a class="anchor" href="#exploiting-lambda-functions">#</a>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
 </h2>
-<p>Once you have discovered some Lambda functions and their triggers, you can try to exploit them by sending malicious inputs or requests. Some of the common attack vectors are:</p>
-<ul>
-<li>Injection attacks: If the Lambda function accepts user input or parameters from an event source (such as API Gateway), you can try to inject malicious code or commands that will execute on the underlying container or environment. For example, you can use <a href="https://portswigger.net/research/server-side-template-injection">Server-Side Template Injection (SSTI)</a> techniques to execute arbitrary code on a function that uses a templating engine (such as Jinja2) for rendering HTML responses.</li>
-<li>Privilege escalation attacks: If the Lambda function has an IAM role attached to it that grants access to other AWS resources or services (such as S3 buckets, DynamoDB tables, EC2 instances, etc.), you can try to abuse those permissions by performing unauthorized actions on those resources or services. For example, you can use <a href="https://portswigger.net/web-security/ssrf">Server-Side Request Forgery (SSRF)</a> techniques to make requests from the function&rsquo;s container to internal AWS endpoints (such as metadata service) that will return sensitive information (such as IAM credentials) that you can use for further exploitation.</li>
-<li>Denial-of-service attacks: If the Lambda function has a limited concurrency limit or timeout value set for it (which is common for cost optimization purposes), you can try to exhaust those limits by sending multiple concurrent requests or long-running requests that will prevent other legitimate requests from being processed. For example, you can use <a href="https://github.com/gkbrk/slowloris">Slowloris</a> tool to send partial HTTP requests that will keep connections open with the function&rsquo;s endpoint until it reaches its concurrency limit.</li>
-</ul>
-<h2 id="mitigating-risks">
-  Mitigating Risks
-  <a class="anchor" href="#mitigating-risks">#</a>
+<p>To use aws-fuzz, you need to specify the service name, the operation name, and optionally some parameters. For example, to fuzz the DescribeInstances operation of EC2, you can run:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances</code></p>
+<p>This will generate random values for all the parameters of the operation and send them to the EC2 endpoint. You can also specify some parameters manually by using the <code>-p</code> option. For example:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances -p InstanceIds=i-1234567890abcdef0</code></p>
+<p>This will use the given value for InstanceIds and fuzz the rest of the parameters.</p>
+<p>You can also specify multiple operations by using a comma-separated list. For example:</p>
+<p><code>python aws_fuzz.py ec2 DescribeInstances,RunInstances</code></p>
+<p>This will fuzz both operations in sequence.</p>
+<p>The output of aws-fuzz will show you the request details and the response status code and body. You can also enable verbose mode by using <code>-v</code> option to see more details about each request.</p>
+<h2 id="tips">
+  Tips
+  <a class="anchor" href="#tips">#</a>
 </h2>
-<p>To prevent or reduce the impact of pentesting attacks on AWS Lambda functions, there are some best practices that should be followed by developers and administrators:</p>
+<p>Here are some tips for using aws-fuzz effectively:</p>
 <ul>
-<li>Use secure coding practices and frameworks when developing Lambda functions</li>
-<li>Validate and sanitize user input and parameters before processing them</li>
-<li>Implement proper error handling and logging mechanisms for debugging purposes</li>
-<li>Restrict access to Lambda function endpoints using authentication and authorization mechanisms (such as API keys)</li>
-<li>Apply least privilege principle when assigning IAM roles and policies to Lambda functions</li>
-<li>Monitor and audit Lambda function activity using CloudWatch Logs and CloudTrail</li>
+<li>Use a test account or a test region to avoid affecting your production resources</li>
+<li>Monitor your AWS usage and billing to avoid unexpected charges</li>
+<li>Review your CloudTrail logs to see what actions were performed by aws-fuzz</li>
+<li>Use filters or tags to limit the scope of your fuzzing targets</li>
+<li>Analyze the responses for any errors or anomalies that indicate a vulnerability</li>
 </ul>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>API fuzzing is a useful technique for pentesting AWS EC2 and other services. By using aws-fuzz, you can easily generate and send fuzzed requests to AWS endpoints and discover potential security issues. Remember to follow best practices and be responsible when performing pentesting on AWS.</p>
 </article>
  
       

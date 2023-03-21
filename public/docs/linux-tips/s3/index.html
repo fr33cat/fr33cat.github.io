@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
-Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated.">
+<meta name="description" content="How to Find and Exploit Misconfigured S3 Buckets #  Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
-Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated." />
+<meta property="og:description" content="How to Find and Exploit Misconfigured S3 Buckets #  Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fr33cat.github.io/docs/aws/lambda/" />
+<meta property="og:url" content="https://fr33cat.github.io/docs/linux-tips/s3/" />
 
-<title>Lambda | fr33cat.github.io</title>
+<title>S3 | fr33cat.github.io</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
@@ -69,7 +67,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle" checked />
+    <input type="checkbox" id="section-71735f978fdcae7d491e70c2ce0ff094" class="toggle"  />
     <label for="section-71735f978fdcae7d491e70c2ce0ff094" class="flex justify-between">
       <a href="/docs/aws/" class="">AWS</a>
     </label>
@@ -98,7 +96,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aws/lambda/" class="active">Lambda</a>
+    <a href="/docs/aws/lambda/" class="">Lambda</a>
   
 
         </li>
@@ -283,7 +281,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-364fe7b2558a31ebbbc5358b166f4462" class="toggle"  />
+    <input type="checkbox" id="section-364fe7b2558a31ebbbc5358b166f4462" class="toggle" checked />
     <label for="section-364fe7b2558a31ebbbc5358b166f4462" class="flex justify-between">
       <a href="/docs/linux-tips/" class="">linux</a>
     </label>
@@ -325,7 +323,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/linux-tips/s3/" class="">S3</a>
+    <a href="/docs/linux-tips/s3/" class="active">S3</a>
   
 
         </li>
@@ -384,7 +382,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Lambda</strong>
+  <strong>S3</strong>
 
   <label for="toc-control">
     
@@ -398,47 +396,62 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="how-to-pentest-aws-lambda-functions">
-  How to Pentest AWS Lambda Functions
-  <a class="anchor" href="#how-to-pentest-aws-lambda-functions">#</a>
+  <article class="markdown"><h1 id="how-to-find-and-exploit-misconfigured-s3-buckets">
+  How to Find and Exploit Misconfigured S3 Buckets
+  <a class="anchor" href="#how-to-find-and-exploit-misconfigured-s3-buckets">#</a>
 </h1>
-<p>AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.</p>
-<p>Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated. However, there are some techniques that can help you discover and exploit vulnerabilities in Lambda functions and their configurations.</p>
-<h2 id="discovering-lambda-functions">
-  Discovering Lambda Functions
-  <a class="anchor" href="#discovering-lambda-functions">#</a>
+<p>Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques.</p>
+<h2 id="finding-s3-buckets">
+  Finding S3 Buckets
+  <a class="anchor" href="#finding-s3-buckets">#</a>
 </h2>
-<p>One of the first steps in pentesting AWS Lambda functions is to find out which functions exist and how they are invoked. There are several ways to do this:</p>
+<p>One of the first steps in pentesting AWS S3 is to identify potential targets. There are several ways to find S3 buckets, such as:</p>
 <ul>
-<li>Use the AWS CLI or SDK to list all the functions in a region: <code>aws lambda list-functions --region &lt;region&gt;</code></li>
-<li>Use the AWS Management Console to browse through the functions and their triggers</li>
-<li>Use tools like <a href="https://github.com/Coalfire-Research/Lambhack">Lambhack</a> or <a href="https://github.com/RhinoSecurityLabs/pacu">Pacu</a> to enumerate Lambda functions and their metadata</li>
-<li>Use passive reconnaissance techniques such as DNS enumeration, subdomain scanning, web crawling, etc. to find endpoints that invoke Lambda functions</li>
-<li>Use active reconnaissance techniques such as port scanning, banner grabbing, fuzzing, etc. to identify Lambda function endpoints and their parameters</li>
+<li>Using public tools like <a href="https://buckets.grayhatwarfare.com/">Grayhat Warfare</a> or <a href="https://github.com/eth0izzle/bucket-stream">Bucket Stream</a> that scan for publicly accessible buckets</li>
+<li>Using subdomain enumeration tools like <a href="https://github.com/OWASP/Amass">Amass</a> or <a href="https://github.com/projectdiscovery/subfinder">Subfinder</a> that can reveal bucket names based on DNS records</li>
+<li>Using wordlists or brute force tools like <a href="https://github.com/jordanpotti/AWSBucketDump">AWSBucketDump</a> or <a href="https://github.com/sa7mon/S3Scanner">S3Scanner</a> that can guess bucket names based on common patterns</li>
+<li>Using metadata analysis tools like <a href="https://www.elevenpaths.com/labstools/foca/index.html">FOCA</a> or <a href="https://github.com/laramies/metagoofil">Metagoofil</a> that can extract bucket names from documents or images hosted on S3</li>
 </ul>
-<h2 id="exploiting-lambda-functions">
-  Exploiting Lambda Functions
-  <a class="anchor" href="#exploiting-lambda-functions">#</a>
+<p>Once you have a list of potential bucket names, you can use the AWS CLI tool or a web browser to check if they exist and what permissions they have. For example, using the AWS CLI tool, you can run the following command:</p>
+<p><code>aws s3 ls s3://bucket-name --no-sign-request</code></p>
+<p>This will list the contents of the bucket if it exists and is publicly readable. If you get an error message like <code>Access Denied</code> or <code>AllAccessDisabled</code>, it means that the bucket either does not exist or is not publicly accessible.</p>
+<h2 id="exploiting-s3-buckets">
+  Exploiting S3 Buckets
+  <a class="anchor" href="#exploiting-s3-buckets">#</a>
 </h2>
-<p>Once you have discovered some Lambda functions and their triggers, you can try to exploit them by sending malicious inputs or requests. Some of the common attack vectors are:</p>
+<p>Depending on the permissions of the bucket, you may be able to perform different actions on it, such as:</p>
 <ul>
-<li>Injection attacks: If the Lambda function accepts user input or parameters from an event source (such as API Gateway), you can try to inject malicious code or commands that will execute on the underlying container or environment. For example, you can use <a href="https://portswigger.net/research/server-side-template-injection">Server-Side Template Injection (SSTI)</a> techniques to execute arbitrary code on a function that uses a templating engine (such as Jinja2) for rendering HTML responses.</li>
-<li>Privilege escalation attacks: If the Lambda function has an IAM role attached to it that grants access to other AWS resources or services (such as S3 buckets, DynamoDB tables, EC2 instances, etc.), you can try to abuse those permissions by performing unauthorized actions on those resources or services. For example, you can use <a href="https://portswigger.net/web-security/ssrf">Server-Side Request Forgery (SSRF)</a> techniques to make requests from the function&rsquo;s container to internal AWS endpoints (such as metadata service) that will return sensitive information (such as IAM credentials) that you can use for further exploitation.</li>
-<li>Denial-of-service attacks: If the Lambda function has a limited concurrency limit or timeout value set for it (which is common for cost optimization purposes), you can try to exhaust those limits by sending multiple concurrent requests or long-running requests that will prevent other legitimate requests from being processed. For example, you can use <a href="https://github.com/gkbrk/slowloris">Slowloris</a> tool to send partial HTTP requests that will keep connections open with the function&rsquo;s endpoint until it reaches its concurrency limit.</li>
+<li>
+<p>Reading objects: If the bucket has <code>ListObjects</code> and <code>GetObject</code> permissions enabled for everyone, you can download any object from it using the AWS CLI tool or a web browser. For example:</p>
+<p><code>aws s3 cp s3://bucket-name/object-name . --no-sign-request</code></p>
+<p>This will copy the object to your current directory.</p>
+</li>
+<li>
+<p>Writing objects: If the bucket has <code>PutObject</code> permission enabled for everyone, you can upload any object to it using the AWS CLI tool or a web browser. For example:</p>
+<p><code>aws s3 cp local-file s3://bucket-name/object-name --no-sign-request</code></p>
+<p>This will upload your local file to the bucket with the specified name.</p>
+</li>
+<li>
+<p>Deleting objects: If the bucket has <code>DeleteObject</code> permission enabled for everyone, you can delete any object from it using the AWS CLI tool or a web browser. For example:</p>
+<p><code>aws s3 rm s3://bucket-name/object-name --no-sign-request</code></p>
+<p>This will delete the object from the bucket.</p>
+</li>
+<li>
+<p>Modifying permissions: If the bucket has <code>PutBucketAcl</code> permission enabled for everyone, you can change its access control list (ACL) using
+the AWS CLI tool or a web browser. For example:</p>
+<p><code>aws s3api put-bucket-acl --bucket bucket-name --acl private --no-sign-request</code></p>
+<p>This will make the bucket private and remove any public access.</p>
+</li>
 </ul>
-<h2 id="mitigating-risks">
-  Mitigating Risks
-  <a class="anchor" href="#mitigating-risks">#</a>
+<p>Exploiting misconfigured S3 buckets can lead to various impacts, such as data leakage, data tampering, data loss, denial of service,
+or even code execution if malicious files are uploaded and executed by other services that use S3 as a source.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
 </h2>
-<p>To prevent or reduce the impact of pentesting attacks on AWS Lambda functions, there are some best practices that should be followed by developers and administrators:</p>
-<ul>
-<li>Use secure coding practices and frameworks when developing Lambda functions</li>
-<li>Validate and sanitize user input and parameters before processing them</li>
-<li>Implement proper error handling and logging mechanisms for debugging purposes</li>
-<li>Restrict access to Lambda function endpoints using authentication and authorization mechanisms (such as API keys)</li>
-<li>Apply least privilege principle when assigning IAM roles and policies to Lambda functions</li>
-<li>Monitor and audit Lambda function activity using CloudWatch Logs and CloudTrail</li>
-</ul>
+<p>AWS S3 is a widely used cloud storage service that offers many benefits but also poses many risks if not configured properly. As pentesters,
+we should always look for misconfigured S3 buckets as part of our reconnaissance and exploitation phases. As defenders,
+we should always follow best practices for securing our S3 buckets and monitor them regularly for any unauthorized access.</p>
 </article>
  
       

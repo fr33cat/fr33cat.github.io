@@ -37,12 +37,70 @@ Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scala
     
     <item>
       <title></title>
+      <link>https://fr33cat.github.io/docs/linux-tips/ec2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/linux-tips/ec2/</guid>
+      <description>How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/linux-tips/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/linux-tips/lambda/</guid>
+      <description>How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
+Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/linux-tips/s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/linux-tips/s3/</guid>
+      <description>How to Find and Exploit Misconfigured S3 Buckets #  Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/</guid>
       <description>Using Public/Private Key Pairs for Encryption and Decryption with Python #  In this blog post, we’ll take a look at how to use the cryptography library in Python to generate a public/private key pair and use them for encryption and decryption.
 The cryptography library provides a simple and easy-to-use API for performing common cryptographic operations. In our example script, we use the rsa module from the cryptography.hazmat.primitives.asymmetric package to generate a public/private key pair and perform RSA encryption with OAEP padding.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/aws/ec2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/aws/ec2/</guid>
+      <description>How to Perform API Fuzzing on AWS EC2 #  API fuzzing is a technique that involves sending malformed or unexpected inputs to an API endpoint and observing how it responds. The goal is to identify potential vulnerabilities, such as injection attacks, denial of service, information disclosure, or authentication bypass.
+In this blog post, we will show you how to perform API fuzzing on AWS EC2 using a tool called aws-fuzz.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/aws/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/aws/lambda/</guid>
+      <description>How to Pentest AWS Lambda Functions #  AWS Lambda is a serverless computing service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by various events, such as HTTP requests, S3 bucket changes, DynamoDB streams, etc. Lambda functions can also access other AWS services and resources through IAM roles and policies.
+Pentesting AWS Lambda functions can be challenging, as they are ephemeral, scalable, and isolated.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/docs/python-snippets/aws/s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/docs/python-snippets/aws/s3/</guid>
+      <description>How to Find and Exploit Misconfigured S3 Buckets #  Amazon Simple Storage Service (S3) is a popular cloud storage service that allows users to store and retrieve objects from anywhere on the web. However, S3 buckets can also be a source of security vulnerabilities if they are not configured properly. In this blog post, we will show you how to find and exploit misconfigured S3 buckets using some common tools and techniques.</description>
     </item>
     
     <item>
@@ -76,16 +134,6 @@ First, we define two functions: encrypt_message() and decrypt_message().</descri
       <guid>https://fr33cat.github.io/docs/python-snippets/telegram-bot/</guid>
       <description>Simple Python script that responds to certain strings:
 import telebot bot_token = &amp;#34;YOUR_BOT_TOKEN_HERE&amp;#34; bot = telebot.TeleBot(bot_token) @bot.message_handler(func=lambda message: True) def handle_message(message): text = message.text.lower() chat_id = message.chat.id if &amp;#34;hello&amp;#34; in text: bot.send_message(chat_id, &amp;#34;Hello there!&amp;#34;) elif &amp;#34;how are you&amp;#34; in text: bot.send_message(chat_id, &amp;#34;I&amp;#39;m doing well, thank you for asking!&amp;#34;) else: bot.send_message(chat_id, &amp;#34;Sorry, I didn&amp;#39;t understand that.&amp;#34;) bot.polling() This script uses the telebot library to create a Telegram bot and handle incoming messages.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fr33cat.github.io/linux-tips/ssh-with-yubikey/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fr33cat.github.io/linux-tips/ssh-with-yubikey/</guid>
-      <description>Here’s a tutorial on how to use a YubiKey to authenticate via SSH to a linux host:
-First, make sure you have OpenSSH version 8.2 or higher installed on your server. If you’re using Debian Buster (stable), it delivers version 7.9 so you’ll need to install a newer version via Debian Buster Backports1. Edit /etc/apt/sources.list and add the following line: deb http://deb.debian.org/debian buster-backports main. Then update the package list and update openssh-server: apt update and apt-get -t buster-backports install &amp;ldquo;openssh-server&amp;quot;1.</description>
     </item>
     
     <item>

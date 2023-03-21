@@ -1,6 +1,6 @@
 ---
 weight: 2
-title: "linux"
+title: "Linux notes"
 bookCollapseSection: true
 ---
 

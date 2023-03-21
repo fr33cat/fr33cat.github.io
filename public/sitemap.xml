@@ -7,15 +7,19 @@
   </url>
   
   <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/aws/</loc>
+  </url>
+  
+  <url>
     <loc>https://fr33cat.github.io/docs/azure/</loc>
   </url>
   
   <url>
-    <loc>https://fr33cat.github.io/linux-tips/</loc>
+    <loc>https://fr33cat.github.io/docs/python-snippets/</loc>
   </url>
   
   <url>
-    <loc>https://fr33cat.github.io/docs/python-snippets/</loc>
+    <loc>https://fr33cat.github.io/docs/linux-tips/</loc>
   </url>
   
   <url>
@@ -31,7 +35,31 @@
   </url>
   
   <url>
+    <loc>https://fr33cat.github.io/docs/linux-tips/ec2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/linux-tips/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/linux-tips/s3/</loc>
+  </url>
+  
+  <url>
     <loc>https://fr33cat.github.io/docs/python-snippets/asymetric-encryption/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/aws/ec2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/aws/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fr33cat.github.io/docs/python-snippets/aws/s3/</loc>
   </url>
   
   <url>
@@ -44,10 +72,6 @@
   
   <url>
     <loc>https://fr33cat.github.io/docs/python-snippets/telegram-bot/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fr33cat.github.io/linux-tips/ssh-with-yubikey/</loc>
   </url>
   
   <url>
