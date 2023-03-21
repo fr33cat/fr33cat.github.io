@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Under construction  ">
+<meta name="description" content="Here’s a tutorial on how to use a YubiKey to authenticate via SSH to a linux host:
+First, make sure you have OpenSSH version 8.2 or higher installed on your server. If you’re using Debian Buster (stable), it delivers version 7.9 so you’ll need to install a newer version via Debian Buster Backports1. Edit /etc/apt/sources.list and add the following line: deb http://deb.debian.org/debian buster-backports main. Then update the package list and update openssh-server: apt update and apt-get -t buster-backports install &ldquo;openssh-server&quot;1.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="AZURE" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://fr33cat.github.io/docs/azure/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Here’s a tutorial on how to use a YubiKey to authenticate via SSH to a linux host:
+First, make sure you have OpenSSH version 8.2 or higher installed on your server. If you’re using Debian Buster (stable), it delivers version 7.9 so you’ll need to install a newer version via Debian Buster Backports1. Edit /etc/apt/sources.list and add the following line: deb http://deb.debian.org/debian buster-backports main. Then update the package list and update openssh-server: apt update and apt-get -t buster-backports install &ldquo;openssh-server&quot;1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fr33cat.github.io/linux-tips/ssh-with-yubikey/" />
 
-<title>AZURE | fr33cat.github.io</title>
+<title>Ssh With Yubikey | fr33cat.github.io</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" integrity="sha256-5/N/5mJ7sAgssbC5rhXDk4AXI4pyRIyEZMGXpWEe0ZE=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.b56ff6c35578de6c08f8f177cef28655d6a7aacada98973ab74be9bc6990362b.js" integrity="sha256-tW/2w1V43mwI&#43;PF3zvKGVdanqsramJc6t0vpvGmQNis=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://fr33cat.github.io/docs/azure/index.xml" title="fr33cat.github.io" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -128,9 +129,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle" checked />
+    <input type="checkbox" id="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="toggle"  />
     <label for="section-683f6f0ae678ece99a2caa1bc67a8eb5" class="flex justify-between">
-      <a href="/docs/azure/" class="active">AZURE</a>
+      <a href="/docs/azure/" class="">AZURE</a>
     </label>
   
 
@@ -263,7 +264,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>AZURE</strong>
+  <strong>Ssh With Yubikey</strong>
 
   <label for="toc-control">
     
@@ -277,10 +278,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><blockquote class="book-hint warning">
-  Under construction
-</blockquote>
-
+  <article class="markdown"><p>Here’s a tutorial on how to use a YubiKey to authenticate via SSH to a linux host:</p>
+<p>First, make sure you have OpenSSH version 8.2 or higher installed on your server. If you’re using Debian Buster (stable), it delivers version 7.9 so you’ll need to install a newer version via Debian Buster Backports1. Edit /etc/apt/sources.list and add the following line: deb <a href="http://deb.debian.org/debian">http://deb.debian.org/debian</a> buster-backports main. Then update the package list and update openssh-server: apt update and apt-get -t buster-backports install &ldquo;openssh-server&quot;1.</p>
+<p>Next, create FIDO U2F keys on your local machine: ssh-keygen -t ecdsa-sk -f ~/.ssh/id_ecdsa_sk. You may want to repeat this step with your backup stick: ssh-keygen -t ecdsa-sk -f ~/.ssh/id_ecdsa_sk21.</p>
+<p>You can use these new public keys like your old ones (without FIDO). Just put them on your server: ssh-copy-id -i ~/.ssh/id_ecdsa_sk.pub YOUR_SERVER_NAME and repeat for backup stick: ssh-copy-id -i ~/.ssh/id_ecdsa_sk2.pub YOUR_SERVER_NAME. Or you can copy the content of the files id_ecdsa_sk.pub and id_ecdsa_sk2.pub into the file .ssh/authorized_keys on your server1.</p>
+<p>If you previously used normal public key authentication without FIDO U2F you may want to remove the old key in it. If you now open a new ssh connection your Yubikey has to be connected to your PC and you have to touch it to establish the connection1.</p>
 </article>
  
       

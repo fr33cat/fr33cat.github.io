@@ -3,6 +3,8 @@ headless: true
 ---
 
 - [**AWS**]({{< relref "/docs/aws" >}})
+- [**Azure**]({{< relref "/docs/azure" >}})
+- [**linux-tips**]({{< relref "/docs/linux-tips" >}})
 <br />
 
 - **Shortcodes**

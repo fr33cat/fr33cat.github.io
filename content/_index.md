@@ -13,5 +13,4 @@ Here you will find a collection of articles and tutorials covering various topic
 
 Thank you for visiting and we hope you find our website useful!
 
-<img src="https://cataas.com/cat/cute" alt= “” width="40%" height="40%">
-
+<img src="logo.png" alt= “” width="30%" height="30%">

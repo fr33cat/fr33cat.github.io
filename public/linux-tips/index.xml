@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AZURE on fr33cat.github.io</title>
+    <link>https://fr33cat.github.io/linux-tips/</link>
+    <description>Recent content in AZURE on fr33cat.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://fr33cat.github.io/linux-tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://fr33cat.github.io/linux-tips/ssh-with-yubikey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fr33cat.github.io/linux-tips/ssh-with-yubikey/</guid>
+      <description>Here’s a tutorial on how to use a YubiKey to authenticate via SSH to a linux host:
+First, make sure you have OpenSSH version 8.2 or higher installed on your server. If you’re using Debian Buster (stable), it delivers version 7.9 so you’ll need to install a newer version via Debian Buster Backports1. Edit /etc/apt/sources.list and add the following line: deb http://deb.debian.org/debian buster-backports main. Then update the package list and update openssh-server: apt update and apt-get -t buster-backports install &amp;ldquo;openssh-server&amp;quot;1.</description>
+    </item>
+    
+  </channel>
+</rss>
